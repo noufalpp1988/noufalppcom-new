@@ -1,8 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400|Roboto:300,400');
+
 $i:!important;
+
+$baseFont:16px;
+
 $primary-color:#377dff;
 $primary-color-dark:#356bc5;
 $black:#000;
+$greyMed:#77838f;
 $white:#fff;
+$greenPale:rgba(0, 201, 167, 0.1);
+$greenMed:#00c9a7;
+$bluePale:rgba(55, 125, 255, 0.1);
+$blueMed:#377dff;
+
+
 
 // mixins $ functions
 
@@ -26,11 +38,11 @@ $white:#fff;
 }
 // padding fn
 @function padding($top:0,$right:0,$bottom:0,$left:0){
-    @return $top+px $right+px $bottom+px $left+px ;
+    @return $top $right $bottom $left ;
 }
 // margin fn
 @function margin($top:0,$right:0,$bottom:0,$left:0){
-    @return $top+px $right+px $bottom+px $left+px ;
+    @return $top $right $bottom $left;
 }
 // To quickly centre a block element without having to worry about if there is any top or bottom margin already applied.
 @mixin push--auto {
@@ -91,8 +103,15 @@ $white:#fff;
 }
 
 // font styles
-@mixin font-source-sans($size: false, $colour: false, $weight: false,  $lh: false) {
-    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+@mixin font-poppins($size: false, $colour: false, $weight: false,  $lh: false) {
+    font-family: 'Poppins', sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+@mixin font-roboto($size: false, $colour: false, $weight: false,  $lh: false) {
+    font-family: 'Roboto', sans-serif;
     @if $size { font-size: $size; }
     @if $colour { color: $colour; }
     @if $weight { font-weight: $weight; }
@@ -142,25 +161,38 @@ $z-indexes: (
 
 
 // style starts here
+.btn-cont{
+    padding:padding(1rem,0,1rem,0);
+}
 .btn-primary {
     color: $white;
     background-color: $primary-color;
     border:none;
 }
-.top-nav-collapse {
-    background-color: #82b1ff !important; 
-}
-.navbar-dark .navbar-brand {
-    color: #58a1e4;
-}
-.navbar:not(.top-nav-collapse) {
-    background: transparent !important;
-}
-@media (max-width: 768px) {
-    .navbar:not(.top-nav-collapse) {
-        background: #82b1ff !important;
-    } 
-}
-.container-main-margin{
-    padding:padding(25,0,0,0);
+.btn-transparent{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    margin:margin(0,3rem,0,0);
+    i{
+        color:$greenPale;
+        font-size: 1.5rem;
+        margin-right: .5rem;
+        float: left;
+    }
+    span{
+        float: left;
+        @include font-roboto(1rem,$black,400,1.5rem);
+    }
+    &:hover{
+        cursor: pointer;
+        i{
+            color: $black;
+        }
+        span{
+            @include font-roboto(false,$greenMed,false,false);
+        }
+    }
+    &:active,&:focus{
+    }
 }

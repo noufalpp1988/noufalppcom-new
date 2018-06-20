@@ -1,1 +1,22 @@
 @import '../../../src/styles';
+
+.container-main-margin{
+    padding:margin(25px,0,0,0);
+    background: red;
+}
+
+.name-tag{
+    margin:margin(8rem,0,0,0);
+    h1{
+    @include font-poppins(3.5rem,$black,400,1.4em);
+        span{
+            @include font-poppins(1em,$primary-color,200,inherit);
+        }
+    }
+    hr{
+        border-top: 1px solid $bluePale;    
+    }
+    p{
+        @include font-roboto(1rem,$greyMed,300,1.6em);
+    }
+}

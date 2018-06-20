@@ -1,13 +1,17 @@
 @import '../../../../src/styles';
 
+.navbar-brand{
+    @include font-roboto(20px,$black,400,1.4em);
+}
 
 .navMain{
     @include clearfix;
-    
 }
 
 .navMain {
-    background:$white $i;
+    background:$white;
+    box-shadow: none;
+    border-bottom: 1px solid $greenPale;
 
     .nav-link{
         color:$black $i;
