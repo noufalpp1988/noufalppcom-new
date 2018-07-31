@@ -11,7 +11,7 @@ declare var $: any;
 })
 export class NavigationComponent implements OnInit {
 
-  profileName:string="NAME";
+  profileName:string="NOUFAL";
 
   // @Input() InputTest; 
   // or 

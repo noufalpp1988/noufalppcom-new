@@ -2,13 +2,13 @@
 .home-name-tag{
     h1{
         margin:margin(5rem,0,0,0);
-    @include font-poppins(8rem,$black,600,1.4em);
+    @include font-poppins(7rem,$black,600,.9em);
     background: url('src/assets/images/banner_text_bg.jpg') no-repeat;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: cover;
         span{
-            @include font-poppins(1em,$primaryColor,200,inherit);
+            @include font-poppins(.5em,$primaryColor,200,inherit);
         }
     }
     hr{

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -12,7 +12,7 @@ export class WorkCreateComponent implements OnInit {
 
   work: any = {};
 
-  constructor(private _http: HttpClient, private _router: Router) { }
+  constructor(private _http: HttpClient, private _router: Router, private _route: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -20,12 +20,16 @@ export class WorkCreateComponent implements OnInit {
   saveWork() {
     this._http.post('/work', this.work)
       .subscribe(res => {
-          let id = res['_id'];
-          this._router.navigate(['/work-detail', id]);
-        }, (err) => {
-          console.log(err);
-        }
+        let id = res['_id'];
+        this._router.navigate(['/work-detail', id]);
+      }, (err) => {
+        console.log(err);
+      }
       );
+  }
+
+  backButton() {
+    this._router.navigate(['/works/']);
   }
 
 }

@@ -8,6 +8,7 @@ var projectSchema = new mongoose.Schema({
     projTech: String,
     projCompany: String,
     projDescription:String,
+    projRole:String,
     projDate: { type: Date, default: Date.now }
 
 });

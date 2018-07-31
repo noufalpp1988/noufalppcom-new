@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
   pageTitle: string;
   homeBtnProfile: string = 'Know more about me';
   homeBtnSeeWorks: string = 'See My Works';
-  AuthorName: string = 'Blah';
-  AuthorSurname: string = '{{blah}}';
+  AuthorName: string = 'Noufal PP';
+  AuthorSurname: string = '{{Full Stack Developer}}';
 
   constructor(private _data: DataService, private _router: Router, private _el: ElementRef, private _renderer: Renderer2) { }
 
