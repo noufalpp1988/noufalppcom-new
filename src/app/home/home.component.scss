@@ -1,16 +1,14 @@
 @import '../../../src/styles';
-
-.container-main-margin{
-    padding:margin(25px,0,0,0);
-    background: red;
-}
-
-.name-tag{
-    margin:margin(8rem,0,0,0);
+.home-name-tag{
     h1{
-    @include font-poppins(3.5rem,$black,400,1.4em);
+        margin:margin(5rem,0,0,0);
+    @include font-poppins(8rem,$black,600,1.4em);
+    background: url('src/assets/images/banner_text_bg.jpg') no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
         span{
-            @include font-poppins(1em,$primary-color,200,inherit);
+            @include font-poppins(1em,$primaryColor,200,inherit);
         }
     }
     hr{
@@ -19,4 +17,7 @@
     p{
         @include font-roboto(1rem,$greyMed,300,1.6em);
     }
+}
+.home-img-tag img{
+   width: 80%;
 }

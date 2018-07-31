@@ -1,0 +1,118 @@
+<app-navigation [InputTest]="1+2+3" (outputTest)="outputTestMethod($event)">
+</app-navigation>
+<section>
+  <div class="container-fluid personal-page-container">
+    <div class="container">
+      <div class="d-flex flex-row">
+        <a routerLink="about" (click)="backButtonFn()">
+          <i class="fa fa-chevron-circle-left"></i> Back About </a>
+      </div>
+      <div class="d-flex flex-row  clearfix">
+        <div class="col-md-8">
+          <h2 class="main-hdr ">Personal
+          </h2>
+          <span> Defines me! </span>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+            text ever since the 1500s, when an unknown printer took a galley of
+          </p>
+        </div>
+      </div>
+      <hr/>
+      <div class="d-flex flex-row col-md-12">
+        <div class="d-flex flex-column align-items-stretch col-md-4">
+          <div class="profile-col left-side">
+            <a>
+              <div class="d-flex flex-row">
+                <div class="col-md-12">
+                  <h5 class="hdr-5">
+                    <i class="fa fa-camera-retro headIcon"></i>
+                    <br/>
+                    <i class="fa fa-angle-double-left arrowIcon"></i> Photography
+                  </h5>
+                  <div class="profile-col-line-container"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="profile-col left-side">
+            <a>
+              <div class="d-flex flex-row">
+                <div class="col-md-12">
+                  <h5 class="hdr-5">
+                    <i class="fa fa-soccer-ball-o headIcon"></i>
+                    <br/>
+                    <i class="fa fa-angle-double-left arrowIcon"></i> Football
+                  </h5>
+                  <div class="profile-col-line-container"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="profile-col left-side">
+            <a>
+              <div class="d-flex flex-row">
+                <div class="col-md-12">
+                  <h5 class="hdr-5">
+                    <i class="fa fa-male headIcon"></i>
+                    <br/>
+                    <i class="fa fa-angle-double-left arrowIcon"></i> Cricket
+                  </h5>
+                  <div class="profile-col-line-container"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="d-flex flex-column align-items-stretch col-md-4 personal-image-container">
+          <img [src]="authorFullImagePath1" class="img-responsive" alt=" Profile Image" />
+        </div>
+        <div class="d-flex flex-column align-items-stretch col-md-4">
+          <div class="profile-col right-side">
+            <a>
+              <div class="d-flex flex-row">
+                <div class="col-md-12">
+                  <h5 class="hdr-5">
+                    <i class="fa fa-desktop headIcon"></i>
+                    <br/>
+                    <i class="fa fa-angle-double-right arrowIcon"></i> Movies
+                  </h5>
+                  <div class="profile-col-line-container"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="profile-col right-side">
+            <a>
+              <div class="d-flex flex-row">
+                <div class="col-md-12">
+                  <h5 class="hdr-5">
+                    <i class="fa fa-music headIcon"></i>
+                    <br/>
+                    <i class="fa fa-angle-double-right arrowIcon"></i> Music
+                  </h5>
+                  <div class="profile-col-line-container"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="profile-col right-side">
+            <a>
+              <div class="d-flex flex-row">
+                <div class="col-md-12">
+                  <h5 class="hdr-5">
+                    <i class="fa fa-home headIcon"></i>
+                    <br/>
+                    <i class="fa fa-angle-double-right arrowIcon"></i> Catagory
+                  </h5>
+                  <div class="profile-col-line-container"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

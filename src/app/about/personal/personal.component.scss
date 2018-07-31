@@ -1,0 +1,101 @@
+@import '../../../../src/styles';
+.personal-page-container{
+    .personal-image-container{
+        img{
+            width:100%;
+        }
+    }
+    .profile-col{
+        margin: margin(30px,0,30px,0);
+        a{
+            width: 100%;
+            float: left;
+            background: #fdfdfd;
+
+            h5{
+                padding:padding(15px,0,15px,0);
+                margin:margin(0,0,0,0);
+                @include font-roboto(1.5em,$black,100,inherit);
+                @include transition(all,0.2s,ease-in-out);
+                i.headIcon{
+                    font-size:1em;
+                    color: $greyMed;
+                }
+                i.arrowIcon{
+                    position: absolute;
+                    top: 50%;
+                    font-size:0em;
+                    color: $greyMed;
+                    @include transition(all,0.2s,ease-in-out);
+                }
+            }
+            .profile-col-line-container{
+                position: absolute;
+                width: 27px;
+                background: $greenBright;
+                height: 3px;
+                top: 50%;
+            }
+            :hover{
+                @include transition(all,0.2s,ease-in-out);
+                h5{
+                    font-weight: 400;
+                    i.headIcon{
+                        color: $greenBright;
+                    }
+                    i.arrowIcon{
+                        font-size:1.8em;
+                        color: $greenBright;
+                        top: 30%;
+                        @include transition(all,0.2s,ease-in-out);
+                    }
+                }
+            }
+        }
+        &.left-side{
+            @include border(right,3px,solid,$greyMed);
+            text-align: right;
+            h5{
+                i.arrowIcon{
+                    left: 0%;
+                }
+            }
+            a{
+                .profile-col-line-container{
+                    right: -30px;
+                }
+            }
+            &:hover{
+                h5{
+                    i.arrowIcon{
+                        left: 20%;
+                    }
+                }
+                @include border(right,3px,solid,$greenBright);
+            }
+        }
+        &.right-side{
+            @include border(left,3px,solid,$greyMed);
+            text-align: left;
+            h5{
+                i.arrowIcon{
+                    right: 0%;
+                }
+            }
+            a{
+                .profile-col-line-container{
+                    left: -29px;
+                }
+            }
+            &:hover{
+                h5{
+                    i.arrowIcon{
+                        right: 20%;
+                    }
+                }
+                @include border(left,3px,solid,$greenBright);
+            }
+        }
+        
+    }
+}

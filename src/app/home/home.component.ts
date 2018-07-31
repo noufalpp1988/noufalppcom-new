@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ElementRef, Renderer2, HostListener, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 
 declare var $: any;
@@ -6,25 +7,46 @@ declare var $: any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  encapsulation: ViewEncapsulation.None  // sets whether this styles affect other components or not
+
 })
+
 export class HomeComponent implements OnInit {
   pageTitle: string;
-  homeBtnValue: string = 'View Profile';
-  homeBtnSeeWorks: string = 'See Works';
-  AuthorName: string = 'Name';
-  AuthorSurname: string = 'Surname';
+  homeBtnProfile: string = 'Know more about me';
+  homeBtnSeeWorks: string = 'See My Works';
+  AuthorName: string = 'Blah';
+  AuthorSurname: string = '{{blah}}';
 
-  constructor(private data: DataService) { }
+  constructor(private _data: DataService, private _router: Router, private _el: ElementRef, private _renderer: Renderer2) { }
 
   ngOnInit() {
+    // adding class to body tag
+    this._renderer.addClass(document.body, 'home-page');
 
-    this.data.currentPageTitle.subscribe(res => this.pageTitle = res); // subscribe 'currentPageTitle' as watchable and when assigns the response to 'message' when value changes
-    this.data.changePageTitle("home"); // setting value for pageTitle
+    // subscribe 'currentPageTitle' as watchable and when assigns the response to 'message' when value changes
+    this._data.currentPageTitle.subscribe(res => this.pageTitle = res);
+    this._data.changePageTitle("Home"); // setting value for pageTitle
 
-    // $('button').on("click",function(){
-    //   alert();
-    // });
   }
 
+  navigateUrlFn(_path): void {     // receives whole element as arg
+    if (_path.name == 'homeProfileLink') {
+      this.homeBtnProfile = "Loading....";
+
+    } else if (_path.name == 'homeWorksLink') {
+      this.homeBtnSeeWorks = "Loading....";
+
+    }
+    setTimeout(() => {
+      this._router.navigateByUrl(_path.value);
+
+    }, 500);
+  }
+
+  ngOnDestroy() {
+    this._renderer.removeClass(document.body, 'home-page');
+
+  }
 }

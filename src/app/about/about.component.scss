@@ -1,1 +1,181 @@
 @import '../../../src/styles';
+
+.about-page-container{
+    hr{
+        border-top: 1px solid $bluePale;    
+    }
+    p{
+        @include font-roboto(1rem,$greyMed,300,1.6em);
+    }
+    div.image-container{
+        img{
+            width:80%;
+        }
+    }
+}
+hr{
+    width: 100%;
+    border-top: 1px solid $bluePale;    
+}
+.about-hyperlinks-cont{
+    margin:margin(5rem,0,5rem,0);
+    @include transition(all,0.5s,linear);
+    h2{
+        margin:margin(.5rem,0,.5rem,0);
+    }
+    .about-personal-cont{
+        text-align: center;
+    }
+    .about-professional-cont{
+        text-align: center;
+    }
+    img{
+        width:100px;
+        margin:margin(0,0,2rem,0);
+        @include transition(all,0.2s,ease-in-out);
+    }
+    a{
+        width:100%;
+        float:left;
+        h6{
+            @include font-poppins(1.2rem,$black,500,1.4em);
+            @include transition(all,0.2s,ease-in-out);
+        }
+        &:hover{
+            h6{
+                color:$greenMed;
+            }
+            img{
+                opacity:.6;
+            }
+        }
+    }
+}
+.about-education-box{
+    margin:margin(3rem,0,3rem,0);
+    .about-education{
+        &:after {
+            content: "";
+            position: absolute;
+            background-color: $greyMed;
+            width: 2px;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        .content-box{
+            @include border(bottom,1px,solid,$transparent);
+            @include transition(all,0.3s,ease-in-out);
+            &:after {
+                content: "";
+                position: absolute;
+                background-color: $greenBright;
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+                border: 3px solid #ffffff;
+                top: 0;
+                margin-top: 25px;
+                @include transition(all,0.3s,ease-in-out);
+            }
+            &:hover{
+                @include border(bottom,1px,solid,$greyMed);
+                &:after{
+                    background-color: $redBright;
+                }
+                .year-box{
+                    h1{
+                        @include font-roboto(2.5em,$redBright,500,1.6em);
+                    }
+                }
+            }
+            .year-box{
+                h1{
+                    @include font-roboto(2.5em,$greyMed,500,1.6em);
+                    @include transition(all,0.2s,ease-in-out);
+                    span{
+                            @include font-roboto(.5em,$greyMid,400,1.6em);
+                    }
+                }
+            }
+            .info-box{
+                h4{
+                    @include font-roboto(1em,$black,500,1.6em);
+                    @include transition(all,0.2s,ease-in-out);
+                }
+                span{
+                    @include font-roboto(1em,$greyMed,100,1.6em);
+                    i{
+                        font-size: 1.3em;
+                        color: $redBright;
+                    }
+                }
+                p{
+                    margin:margin(10px,0,10px,0);
+                    @include font-poppins(1em,$greyMed,400,1.4em);
+                    i{
+                        color: $primaryColorDark;
+                    }
+                    i.fa-external-link{
+                        color: $greenMed;
+                    }
+                    a{
+                        color: $black;
+                        &:hover{
+                            color:$greenMed;
+                        }
+                    }
+                }
+            }
+        }
+        &.right-box{
+            .content-box{
+                &:after {
+                    left: -9px;
+                }
+                .info-box{
+                    span{
+                        i{
+                            margin:margin(0,10px,0,0);
+                        }
+                    }
+                    p{
+                        i{
+                            margin:margin(0,5px,0,0);
+                        }
+                    }
+                }
+            }
+            &:after {
+                left: 0;
+                right: 100%;
+            }
+        }
+        &.left-box{
+            .content-box{
+                &:after {
+                    right: -11px;
+                }
+                .info-box{
+                    span{
+                        i{
+                            margin:margin(0,0,0,10px);
+                        }
+                    }
+                    p{
+                        i{
+                            margin:margin(0,0,0,5px);                            
+                        }
+                    }
+                }
+            }
+            &:after {
+                left: 100%;
+                right: 0;
+            }
+        }
+    }
+}
+.about-experience-box{
+
+}

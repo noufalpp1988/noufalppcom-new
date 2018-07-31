@@ -4,15 +4,20 @@ $i:!important;
 
 $baseFont:16px;
 
-$primary-color:#377dff;
-$primary-color-dark:#356bc5;
+$primaryColor:#1b73ff;
+$primaryColorDark:#356bc5;
+$transparent:transparent;
 $black:#000;
+$greyLight:#f7f7f7;
+$greyMid:#b1b1b1;
 $greyMed:#77838f;
 $white:#fff;
 $greenPale:rgba(0, 201, 167, 0.1);
 $greenMed:#00c9a7;
+$greenBright:#76c239;
 $bluePale:rgba(55, 125, 255, 0.1);
-$blueMed:#377dff;
+$blueMed:#1b73ff;
+$redBright:#f6483b;
 
 
 
@@ -29,6 +34,7 @@ $blueMed:#377dff;
    }
    zoom: 1;
 }
+// transition fn
 @mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
     -webkit-transition: $what $time $how;
     -moz-transition:    $what $time $how;
@@ -44,6 +50,7 @@ $blueMed:#377dff;
 @function margin($top:0,$right:0,$bottom:0,$left:0){
     @return $top $right $bottom $left;
 }
+
 // To quickly centre a block element without having to worry about if there is any top or bottom margin already applied.
 @mixin push--auto {
     margin: { 
@@ -117,7 +124,24 @@ $blueMed:#377dff;
     @if $weight { font-weight: $weight; }
     @if $lh { line-height: $lh; }
 }
-
+//border
+@mixin border($side,$size,$style,$color){
+    @if $side == top{
+        border-top:$size $style $color;
+    }
+    @else if $side == right{
+        border-right:$size $style $color;
+    }
+    @else if $side == bottom{
+        border-bottom:$size $style $color;
+    }
+    @else if $side == left{
+        border-left:$size $style $color;
+    }
+    @else if $side == all{
+        border:$size $style $color;
+    }
+}
 // media queries
 $breakpoints: (
     "phone":        400px,
@@ -159,14 +183,27 @@ $z-indexes: (
 );
 
 
-
 // style starts here
+body{
+    background: $white;
+}
+hr{
+    margin:margin(.5rem,0,.5rem,0);
+}
+.home-page{
+    background:$white url('src/assets/images/banner_bg.jpg') no-repeat center center fixed ;  // rootsource is set as "src".
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+}
 .btn-cont{
     padding:padding(1rem,0,1rem,0);
 }
 .btn-primary {
     color: $white;
-    background-color: $primary-color;
+    background-color: $primaryColor;
     border:none;
 }
 .btn-transparent{
@@ -182,7 +219,7 @@ $z-indexes: (
     }
     span{
         float: left;
-        @include font-roboto(1rem,$black,400,1.5rem);
+        @include font-roboto(1rem,$black,400,1.6rem);
     }
     &:hover{
         cursor: pointer;
@@ -194,5 +231,82 @@ $z-indexes: (
         }
     }
     &:active,&:focus{
+        outline:none;
+    }
+}
+.main-hdr{
+    @include font-roboto(2rem,$black,500,1.6em);
+    margin: margin(0,0,0,0);
+    padding: padding(15px,10px,15px,0);
+    text-transform: uppercase;
+    position: relative;
+    width: auto;
+    display: inline-flex;
+    &:after{
+        content: "";
+        position: absolute;
+        background-color: #202020;
+        width: 100%;
+        height: 2px;
+        top: 1.8em;
+        left: 0;
+    }
+    +span{
+        @include font-roboto(.7em,$white,400,1.6em);
+        position: relative;
+        left: 0;
+        top: 9px;
+        background: $redBright;
+        padding: 4px 10px;
+        border-radius: 8px;
+    }
+}
+.nav-link{
+    &.activeMenu{
+        color:$redBright !important;
+        font-weight: 500;
+    }
+}
+.hdr-1{
+    width:100%;
+    float: left;
+    margin:margin(.5rem,0,.5rem,0);
+    @include font-poppins(3.5rem,$black,100,1.4em);
+}
+.hdr-2{
+    width:100%;
+    float: left;
+    margin:margin(.5rem,0,.5rem,0);
+    @include font-poppins(3rem,$black,100,1.4em);
+}
+.hdr-3{
+    width:100%;
+    float: left;
+    margin:margin(.5rem,0,.5rem,0);
+    @include font-poppins(2.5rem,$black,100,1.4em);
+}
+.hdr-4{
+    width:100%;
+    float: left;
+    margin:margin(.5rem,0,.5rem,0);
+    @include font-poppins(2rem,$black,100,1.4em);
+}
+.hdr-5{
+    width:100%;
+    float: left;
+    margin:margin(.5rem,0,.5rem,0);
+    @include font-poppins(1.5rem,$black,100,1.4em);
+}
+.hdr-6{
+    width:100%;
+    float: left;
+    margin:margin(.5rem,0,.5rem,0);
+    @include font-poppins(1rem,$black,100,1.4em);
+}
+ul{
+    padding:0;
+    margin:0;
+    li{
+        list-style: none;
     }
 }

@@ -14,11 +14,14 @@
     border-bottom: 1px solid $greenPale;
 
     .nav-link{
-        color:$black $i;
+        color:$black;
 
         &:hover{
             @include transition (all, 0.5s, ease);
                 opacity:.5;
+        }
+        &.activeMenu{
+            color:red !important;
         }
     }
 }

@@ -1,7 +1,6 @@
-<app-navigation [InputTest]="1+2+3" (outputTest)="outputTestMethod($event)">
-    
-</app-navigation>
-<main role="main" class="container container-main-margin ">
-    {{pageTitle}}
-  <router-outlet></router-outlet>
+<main>
+  <main role="main" class="container-fluid container-main-margin ">
+      <p>{{pageTitle}}</p>
+    <router-outlet></router-outlet>
+  </main>
 </main>

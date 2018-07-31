@@ -10,10 +10,10 @@ export class AppComponent implements OnInit {
   title = 'app';
   pageTitle: string;
 
-  constructor(private data: DataService) { //creating instances
+  constructor(private _data: DataService) { //creating instances
   }
   ngOnInit() {
-    this.data.currentPageTitle.subscribe(res => this.pageTitle = res);  // watching currentPageTitle and add to pageTitle when changes occurs
+    this._data.currentPageTitle.subscribe(res => this.pageTitle = res);  // watching currentPageTitle and add to pageTitle when changes occurs
   }
   // function to test @output. pass value from child to parent
 

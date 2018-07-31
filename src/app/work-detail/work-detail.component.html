@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>{{ work.projTitle }}</h1>
+  <dl class="list">
+    <dt>Category</dt>
+    <dd>{{ work.projCategory }}</dd>
+    <dt>Title</dt>
+    <dd>{{ work.projTitle }}</dd>
+    <dt>Domain</dt>
+    <dd>{{ work.projDomain }}</dd>
+    <dt>Duration</dt>
+    <dd>{{ work.projDuration }}</dd>
+    <dt>Technologies</dt>
+    <dd>{{ work.projTech }}</dd>
+    <dt>Company</dt>
+    <dd>{{ work.projCompany }}</dd>
+    <dt>Description</dt>
+    <dd>{{work.projDescription}}</dd>
+    <dt>Date</dt>
+    <dd>{{ work.projDate }}</dd>
+  </dl>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <a [routerLink]="['/work-edit', work._id]" class="btn btn-success">EDIT</a>
+    <button class="btn btn-danger" type="button" (click)="deleteWork(work._id)">DELETE</button>
+    <button class="btn btn-info" type="button" (click)="backToWorks()">BACK</button>
+  </div>
+</div>
