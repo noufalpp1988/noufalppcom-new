@@ -1,0 +1,11 @@
+<app-navigation [InputTest]="1+2+3" (outputTest)="outputTestMethod($event)">
+</app-navigation>
+<section>
+    <div class="container ">
+        <h1>Login</h1>
+
+        <a [routerLink]="['/work-create']" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true">Create work</span>
+        </a>
+    </div>
+</section>

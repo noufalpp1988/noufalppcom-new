@@ -9,8 +9,8 @@ import { WorksComponent } from './works/works.component';
 import { WorkDetailComponent } from './work-detail/work-detail.component';
 import { WorkCreateComponent } from './work-create/work-create.component';
 import { WorkEditComponent } from './work-edit/work-edit.component';
-
 import { ProjectsComponent } from './works/projects/projects.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'about/professional',
     component: ProfessionalComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'works',

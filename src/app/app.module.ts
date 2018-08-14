@@ -19,6 +19,7 @@ import { FooterComponent } from './common/footer/footer.component';
 import { WorkDetailComponent } from './work-detail/work-detail.component';
 import { WorkCreateComponent } from './work-create/work-create.component';
 import { WorkEditComponent } from './work-edit/work-edit.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { WorkEditComponent } from './work-edit/work-edit.component';
     FooterComponent,
     WorkDetailComponent,
     WorkCreateComponent,
-    WorkEditComponent
+    WorkEditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
