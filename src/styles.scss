@@ -16,8 +16,9 @@ $greenPale:rgba(0, 201, 167, 0.1);
 $greenMed:#00c9a7;
 $greenBright:#76c239;
 $bluePale:rgba(55, 125, 255, 0.1);
-$blueMed:#1b73ff;
+$blueMed:#4285f4;
 $redBright:#f6483b;
+$whitePale:#f8f9fa;
 
 
 
@@ -202,8 +203,13 @@ hr{
     padding:padding(1rem,0,1rem,0);
 }
 .btn-primary {
-    color: $white;
-    background-color: $primaryColor;
+    color: $redBright $i;
+    background-color: $whitePale $i;
+    border:none;
+}
+.btn-secondary {
+    color: $blueMed $i;
+    background-color: $whitePale $i;
     border:none;
 }
 .btn-transparent{
